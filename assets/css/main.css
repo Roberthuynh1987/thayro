@@ -591,9 +591,12 @@ body::before {
 [data-lang] { display: none; }
 body.lang-vn [data-lang="vn"] { display: block; }
 body.lang-en [data-lang="en"] { display: block; }
-body.lang-vn [data-lang-inline="vn"] { display: inline; }
-body.lang-en [data-lang-inline="en"] { display: inline; }
-[data-lang-inline] { display: none; }
+body.lang-vn span[data-lang="vn"],
+body.lang-vn a[data-lang="vn"],
+body.lang-vn em[data-lang="vn"] { display: inline; }
+body.lang-en span[data-lang="en"],
+body.lang-en a[data-lang="en"],
+body.lang-en em[data-lang="en"] { display: inline; }
 
 /* ── Animations ── */
 @keyframes fadeUp {
@@ -624,4 +627,63 @@ body.lang-en [data-lang-inline="en"] { display: inline; }
   .header-nav { display: none; }
   .principles-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: .5rem; text-align: center; }
+}
+
+/* ── Post images ── */
+.post-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-img svg { width: 100%; height: 100%; }
+.post-card .post-img {
+  aspect-ratio: 3/2;
+  margin-bottom: .85rem;
+}
+.featured-img {
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.featured-img svg { width: 100%; height: 100%; }
+.post-hero-img {
+  width: 100%;
+  aspect-ratio: 21/7;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.post-hero-img svg { width: 100%; height: 100%; }
+
+/* ── Featured post inner ── */
+.featured-inner {
+  padding: 2rem 2.5rem 2.5rem;
+}
+.featured-img {
+  width: 100%;
+  aspect-ratio: 21/7;
+  background: var(--paper-3);
+  overflow: hidden;
+  display: block;
+}
+.featured-img svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.featured-post {
+  display: block !important;
+  grid-template-columns: unset !important;
 }
