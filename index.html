@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thấy Rõ — Blog về tánh biết, nhận thức và sống bình an. Không giáo điều. Không huyền bí. Chỉ là nhìn thật rõ.">
+  <meta property="og:title" content="Thấy Rõ · Seeing Clearly">
+  <meta property="og:description" content="Quan sát tâm thức. Ứng dụng vào cuộc sống. Sống nhẹ hơn.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Thấy Rõ · Seeing Clearly</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◯</text></svg>">
+</head>
+<body class="lang-vn">
+
+<!-- ════════════════════════════════
+     HEADER
+════════════════════════════════ -->
+<header class="site-header">
+  <div class="container--wide">
+    <div class="header-inner">
+
+      <a class="site-logo" href="#" data-page="home">
+        Thấy <span>Rõ</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="#" data-page="home">
+          <span data-lang="vn">Bài viết</span>
+          <span data-lang="en">Posts</span>
+        </a>
+        <a href="#" data-page="about">
+          <span data-lang="vn">Về blog</span>
+          <span data-lang="en">About</span>
+        </a>
+        <div class="header-lang">
+          <button data-lang-btn data-lang="vn" class="active">VI</button>
+          <button data-lang-btn data-lang="en">EN</button>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════
+     PAGE: HOME
+════════════════════════════════ -->
+<div id="page-home" class="page">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">
+        <span data-lang="vn">Blog · Tánh biết · Thực tại · Trí tuệ</span>
+        <span data-lang="en">Blog · Awareness · Reality · Wisdom</span>
+      </p>
+      <h1 class="hero-title">
+        <span data-lang="vn">Thấy <em>rõ hơn.</em><br>Sống nhẹ hơn.</span>
+        <span data-lang="en">See <em>clearly.</em><br>Live lighter.</span>
+      </h1>
+      <p class="hero-tagline">
+        <span data-lang="vn">Không giáo điều. Không huyền bí. Chỉ là quan sát tâm thức — và ứng dụng vào cuộc sống, công việc, các mối quan hệ ngay hôm nay.</span>
+        <span data-lang="en">No dogma. No mysticism. Just observing the mind — and applying it to life, work, and relationships starting today.</span>
+      </p>
+    </div>
+    <div class="hero-deco"></div>
+  </section>
+
+  <!-- Featured -->
+  <section class="featured-section">
+    <div class="container">
+      <p class="section-label reveal">
+        <span data-lang="vn">Bài nổi bật</span>
+        <span data-lang="en">Featured post</span>
+      </p>
+      <div class="featured-post reveal" id="featured-post"></div>
+    </div>
+  </section>
+
+  <!-- Post grid -->
+  <section class="posts-section">
+    <div class="container">
+      <p class="section-label reveal">
+        <span data-lang="vn">Bài viết gần đây</span>
+        <span data-lang="en">Recent posts</span>
+      </p>
+      <div class="posts-grid" id="posts-grid"></div>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="subscribe-section">
+    <div class="container">
+      <div class="subscribe-inner reveal">
+        <div class="subscribe-text">
+          <h3>
+            <span data-lang="vn">Nhận bài viết mới</span>
+            <span data-lang="en">Get new posts</span>
+          </h3>
+          <p>
+            <span data-lang="vn">Mỗi tuần một bài — ngắn gọn, sâu sắc, ứng dụng được ngay.</span>
+            <span data-lang="en">One post a week — concise, deep, immediately applicable.</span>
+          </p>
+        </div>
+        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+          <input type="email" id="sub-email"
+            placeholder="email@gmail.com"
+            aria-label="Email">
+          <button type="submit" class="btn-subscribe">
+            <span data-lang="vn">Đăng ký</span>
+            <span data-lang="en">Subscribe</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Thấy <span>Rõ</span></div>
+        <p class="footer-copy">
+          <span data-lang="vn">© 2025 · Viết bằng quan sát, không phải lý thuyết.</span>
+          <span data-lang="en">© 2025 · Written from observation, not theory.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-home -->
+
+
+<!-- ════════════════════════════════
+     PAGE: POST
+════════════════════════════════ -->
+<div id="page-post" class="page" style="display:none">
+
+  <section class="post-hero">
+    <div class="container">
+      <div id="post-hero-content"></div>
+    </div>
+  </section>
+
+  <section class="post-body">
+    <div class="container">
+      <div id="post-body-content"></div>
+      <div class="post-nav" id="post-nav"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Thấy <span>Rõ</span></div>
+        <p class="footer-copy">
+          <span data-lang="vn">© 2025 · Viết bằng quan sát, không phải lý thuyết.</span>
+          <span data-lang="en">© 2025 · Written from observation, not theory.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-post -->
+
+
+<!-- ════════════════════════════════
+     PAGE: ABOUT
+════════════════════════════════ -->
+<div id="page-about" class="page" style="display:none">
+
+  <section class="about-section">
+    <div class="container">
+
+      <h1 class="about-title reveal">
+        <span data-lang="vn">Không giáo điều.<br>Không huyền bí.<br>Chỉ là <em>nhìn thật rõ.</em></span>
+        <span data-lang="en">No dogma.<br>No mysticism.<br>Just <em>seeing clearly.</em></span>
+      </h1>
+
+      <div class="about-body reveal">
+        <p data-lang="vn">
+          Thấy Rõ là blog dành cho người bình thường đang sống một cuộc đời bình thường — nhưng muốn hiểu tại sao mình khổ, tại sao mình phản ứng, và liệu có cách nào nhẹ hơn không.
+        </p>
+        <p data-lang="en">
+          Thấy Rõ (Seeing Clearly) is a blog for ordinary people living ordinary lives — who want to understand why they suffer, why they react, and whether there's a lighter way to be.
+        </p>
+        <p data-lang="vn">
+          Không có nhãn "Phật giáo", "thiền định" hay "tâm linh" ở đây. Chỉ là quan sát thực tại — và chia sẻ những gì thấy, theo cách mà bạn có thể ứng dụng ngay vào cuộc họp buổi sáng, bữa cơm gia đình, hay khoảnh khắc một mình lúc 11 giờ đêm.
+        </p>
+        <p data-lang="en">
+          No "Buddhism", "meditation" or "spirituality" labels here. Just observing reality — and sharing what's seen, in ways you can apply to your morning meeting, family dinner, or a quiet moment alone at 11pm.
+        </p>
+        <p data-lang="vn">
+          Mỗi bài viết có một thứ bạn có thể thử hôm nay. Không cần nền tảng. Không cần tin vào bất cứ điều gì trước. Chỉ cần sẵn sàng quan sát.
+        </p>
+        <p data-lang="en">
+          Every post has something you can try today. No background needed. No belief required. Just a willingness to observe.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about-principles">
+    <div class="container">
+      <p class="section-label reveal">
+        <span data-lang="vn">4 nguyên tắc của blog</span>
+        <span data-lang="en">4 blog principles</span>
+      </p>
+      <div class="principles-grid">
+        <div class="principle-card reveal">
+          <div class="principle-num">01</div>
+          <div class="principle-title">
+            <span data-lang="vn">Quan sát, không phán xét</span>
+            <span data-lang="en">Observe, don't judge</span>
+          </div>
+          <div class="principle-body">
+            <span data-lang="vn">Không có "đúng sai". Chỉ là nhìn xem tâm đang làm gì, và nó có hợp lý không?</span>
+            <span data-lang="en">No right or wrong. Just: notice what the mind is doing — and whether it makes sense.</span>
+          </div>
+        </div>
+        <div class="principle-card reveal">
+          <div class="principle-num">02</div>
+          <div class="principle-title">
+            <span data-lang="vn">Ứng dụng ngay, không trì hoãn</span>
+            <span data-lang="en">Apply now, not someday</span>
+          </div>
+          <div class="principle-body">
+            <span data-lang="vn">Mỗi bài có ít nhất một thứ bạn thử được hôm nay — trong cuộc họp, lúc kẹt xe, khi bị sếp hỏi khó.</span>
+            <span data-lang="en">Every post has at least one thing you can try today — in a meeting, in traffic, when your boss asks a hard question.</span>
+          </div>
+        </div>
+        <div class="principle-card reveal">
+          <div class="principle-num">03</div>
+          <div class="principle-title">
+            <span data-lang="vn">Sâu nhưng không nặng nề</span>
+            <span data-lang="en">Deep, but not heavy</span>
+          </div>
+          <div class="principle-body">
+            <span data-lang="vn">Viết về vô ngã mà không làm người đọc muốn ngủ. Ví dụ đời thường, không bao giờ thuyết giáo.</span>
+            <span data-lang="en">Writing about no-self without putting readers to sleep. Everyday examples, never preachy.</span>
+          </div>
+        </div>
+        <div class="principle-card reveal">
+          <div class="principle-num">04</div>
+          <div class="principle-title">
+            <span data-lang="vn">Không dán nhãn</span>
+            <span data-lang="en">No labels</span>
+          </div>
+          <div class="principle-body">
+            <span data-lang="vn">Không "Phật giáo", không "thiền định". Chỉ quan sát thực tại và chia sẻ những gì thấy.</span>
+            <span data-lang="en">Not "Buddhism", not "meditation". Just observing reality and sharing what's seen.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Thấy <span>Rõ</span></div>
+        <p class="footer-copy">
+          <span data-lang="vn">© 2025 · Viết bằng quan sát, không phải lý thuyết.</span>
+          <span data-lang="en">© 2025 · Written from observation, not theory.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-about -->
+
+
+<!-- ════════════════════════════════
+     SCRIPTS
+════════════════════════════════ -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/home.js"></script>
+<script src="assets/js/post.js"></script>
+<script src="assets/js/about.js"></script>
+<script>
+  function handleSubscribe(e) {
+    e.preventDefault();
+    var inp = document.getElementById('sub-email');
+    var btn = e.target.querySelector('.btn-subscribe');
+    var isVn = document.body.classList.contains('lang-vn');
+    if (!inp.value) return;
+    btn.textContent = isVn ? 'Đã đăng ký ✓' : 'Subscribed ✓';
+    btn.style.background = '#7a6a52';
+    btn.style.borderColor = '#7a6a52';
+    inp.value = '';
+    setTimeout(function(){
+      btn.innerHTML = '<span data-lang="vn">Đăng ký</span><span data-lang="en">Subscribe</span>';
+      btn.style.background = '';
+      btn.style.borderColor = '';
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
